@@ -1,0 +1,23 @@
+{
+	"name": "sync-wui",
+	"version": "0.0.1",
+	"description": "XenClient XT Synchronizer Web UI",
+	"author": "Rob Moran <robm@citrix.com>",
+	"private": true,
+  	"engines": {
+  		"node": ">= 0.8.0"
+	},
+  	"scripts": {
+    	"start": "node app"
+  	},
+	"dependencies": {
+		"nconf": "0.6.4",
+		"express": "3.0.1",
+		"hbs": "1.0.5",
+		"ldapauth": "2.2.0",
+		"passport": "0.1.12",
+		"connect-flash": "0.1.0",
+		"socket.io": "0.9.11",
+		"chokidar": "0.4.0"
+	}
+}

@@ -1,0 +1,16 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+{
+    "directories": {},
+    "dependencies": {
+        "dgrid": "0.3.3",
+        "put-selector": "0.3.2",
+        "xstyle": "0.0.5",
+        "dojo": "1.8.1",
+        "dijit": "1.8.1"
+    }
+}

@@ -1,0 +1,121 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+/************************************************
+APP LAYOUT STYLES 
+************************************************/
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#app-screen-wrapper{
+    height: 100%;
+	background: url("/images/symphony/HeaderGradient_desktopandApp_655x113.png") no-repeat top left #002F11;	
+}
+#app-screen{
+    background: url("/images/symphony/Brand_OverlaySquarePattern_4x4.png") repeat 0 0 transparent;
+    height: 100%;
+}
+
+#app-header{
+	color:#fff;
+	margin-right:20px;
+}
+
+#app-header .title{
+	display:block;
+	float:left;
+	width:303px;
+	height:60px;
+	background: url("/images/symphony/wordmark_xc_logo_small.png") no-repeat center left;
+	overflow:hidden;
+	text-indent:-99999px;
+	margin:0 0 0 25px;
+	padding:0;
+}
+
+#app-header .header-links{
+	display:block;
+	width:600px;
+	float:right;
+	padding:0;
+	font-size:13px;
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	height:60px;
+	line-height::60px;
+}
+
+#app-header .header-links ul{
+	display:block;
+	text-align:right;
+	padding:0;
+	margin:0;
+}
+
+#app-header .header-links ul li{
+	display:block;
+	float:left;
+	margin:0 auto;
+	padding:0;
+	height:63px;
+	line-height:63px;
+}
+	
+#app-header .header-links a{
+	text-decoration:none;
+	color:#fff;
+}
+	
+#app-header .header-links a span{
+	text-decoration:none;
+	padding:8px;
+}
+
+#app-header .header-links a:link span{
+	background:none;
+	color:#fff;
+}
+#app-header .header-links a:visited span{
+	background:none;
+	color:#fff;
+}
+#app-header .header-links a:hover span{
+	background:#fff;
+	color:#666;
+}
+#app-header .header-links a:active span{
+	background:none;
+	color:#fff;
+}
+
+#app-header .header-links .log-on{
+	width:70px;
+	text-align:right;
+}
+#app-header .header-links .display-name{
+	width:430px;
+	text-align:right;
+}
+#app-header .header-links .log-off{
+	width:70px;
+	text-align:right;
+	background: url("/images/symphony/header_sep.png") no-repeat 0 50%;
+	margin-left:20px;
+}
+
+#app-content{
+	color:#666;
+	text-align:center;
+    height: 100%;
+    /*position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;*/
+}
+

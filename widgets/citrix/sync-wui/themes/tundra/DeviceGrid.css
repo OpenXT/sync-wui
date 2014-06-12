@@ -1,0 +1,96 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .dgrid .field-select {
+    width: 50px;
+}
+
+.tundra .dgrid .field-report_time {
+    width: 200px;
+}
+
+.tundra .dgrid .expandoButtonCell {
+    padding: 0px;
+    width: 45px;
+}
+
+.tundra .dgrid .expandoButtonCell .imageButton .dijitStretch {
+    width: 40px;
+    height: 30px;
+    display: block;
+}
+
+.tundra .dgrid .expandoButtonCell .imageButton .expandoIcon {
+    margin: 7px 12px;
+}
+
+.tundra .expando {
+    display: block;
+    min-height: 100px;
+}
+
+.tundra .collapsed .expando {
+    display: none;
+}
+
+.tundra .expandoContent>div {
+    margin: 10px;
+    border: 1px black solid;
+    padding: 3px;
+    height: 200px;
+    float: left;
+}
+
+.tundra .expandoContent .citrixImageSelect {
+    padding: 0;
+    clear: both;
+}
+
+.tundra .expandoContent .citrixImageItem {
+    padding-bottom:5px;
+    border:none;
+    border-bottom:5px solid #fff;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    width: 60px;
+    float: left;
+    position: relative;
+}
+
+.tundra .expandoContent .citrixImageItem img {
+    display: block;
+    margin: auto;
+}
+
+.tundra .expandoContent .citrixImageItem .lockIcon {
+    display: none;
+}
+
+.tundra .expandoContent .locked.citrixImageItem .lockIcon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 21px;
+    width: 20px;
+    height: 20px;
+    background: url(/images/icons/lock.png) no-repeat 0 0;
+}
+
+.tundra .expandoContent .locked.citrixImageItem img {
+    opacity: 0.5;
+}
+
+.tundra .expandoContent .citrixImageItem.dijitHover {
+    border-bottom-color: #ccc;
+}
+
+.tundra .expandoContent .citrixImageItem.dijitSelected {
+    border-bottom-color: #4A94D0;
+}
+
+.tundra .deviceWidgetContainer .dgrid .field-actions {
+    width: 200px;
+}

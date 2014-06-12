@@ -1,0 +1,65 @@
+<div class="container" id="tabContainer" data-dojo-type="citrix/sync-wui/MainTabContainer">
+    <div data-dojo-type="citrix/common/ContentPane" id="dashboard" title="DashBoard">
+        <div data-dojo-type="citrix/sync-wui/UnseenDeviceWidget" data-dojo-props="days:7" style="width: 49%; float: left"></div>
+        <div data-dojo-type="acme/SampleWidget" style="width: 49%; float: right"></div>
+    </div>
+    <div data-dojo-type="citrix/common/ContentPane" id="computers" title="Computers">
+        <div data-dojo-type="citrix/sync-wui/DeviceWidget"></div>
+    </div>
+    <div data-dojo-type="citrix/common/ContentPane" id="uservms" title="VMs">
+        <div data-dojo-type="citrix/sync-wui/VMWidget"></div>
+    </div>
+    <div data-dojo-type="citrix/common/ContentPane" id="servicevms" title="Services">
+        <div data-dojo-type="citrix/sync-wui/ServiceVMWidget"></div>
+    </div>
+    <div data-dojo-type="citrix/common/ContentPane" id="disks" title="Disks">
+        <div data-dojo-type="citrix/sync-wui/DiskWidget"></div>
+    </div>    
+</div>
+
+{{#extend "script"}}
+
+<script type="text/javascript">
+    dojoConfig = {
+      	parseOnLoad: false,
+      	async: true,
+      	defaultDuration: 1,
+      	locale: XUtils.parseQuery().locale || XUtils.parseCookie().locale
+	};
+    var defaultIcons = "{{defaulticons}}".split(",");
+    var defaultWallpapers = "{{defaultwallpapers}}".split(",");
+    var pluginIcons = "{{pluginicons}}".split(",");
+    var pluginWallpapers = "{{pluginwallpapers}}".split(",");
+    XenClient.Utils.VmIcons = {};
+    XenClient.Utils.Wallpapers = {};
+    for(var i = 0; i < defaultIcons.length; i++) {
+        XenClient.Utils.VmIcons["images/vms/" + defaultIcons[i]] = "images/vms/default/" + defaultIcons[i];
+    }
+    for(var i = 0; i < pluginIcons.length; i++) {
+        XenClient.Utils.VmIcons["plugins/vmimages/" + pluginIcons[i]] = "images/vms/plugins/" + pluginIcons[i];
+    }
+    for(var i = 0; i < defaultWallpapers.length; i++) {
+        XenClient.Utils.Wallpapers["images/wallpaper/" + defaultWallpapers[i]] = "images/wallpaper/default/" + defaultWallpapers[i];
+    }
+    for(var i = 0; i < pluginWallpapers.length; i++) {
+        XenClient.Utils.Wallpapers["plugins/wallpaper/" + pluginWallpapers[i]] = "images/wallpaper/plugins/" + pluginWallpapers[i];
+    }
+</script>
+
+<script type="text/javascript" src="widgets/dojo/dojo.js{{suffix}}"></script>
+<script type="text/javascript" src="script/dojo_utilities.js{{suffix}}"></script>
+
+{{#release}}
+<script type="text/javascript" src="widgets/citrix/sync-wui.js"></script>
+<script type="text/javascript" src="widgets/acme/main.js"></script>
+{{/release}}
+
+<script type="text/javascript">
+    require(["dojo/parser", "dojo/router", "citrix/sync-wui/AlertDialog", "dojo/domReady!"], function(parser, router, alert) {
+        XenClient.Utils.messageBox = new alert();
+        parser.parse().then(function() {
+            router.startup();
+        });
+    });
+</script>
+{{/extend}}

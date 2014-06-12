@@ -1,0 +1,4 @@
+{
+    "name": "acme",
+    "dojoBuild": "acme.profile.js"
+}

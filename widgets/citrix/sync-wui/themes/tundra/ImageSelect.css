@@ -1,0 +1,53 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .citrixImageSelect {
+    margin: 0;
+    /*padding: 0; We want to keep the list style left pad */
+    overflow: auto;
+}
+
+.tundra .citrixImageItem {
+    border: 10px solid transparent;
+}
+
+.tundra .citrixImageItem img {
+    opacity: 1.0;
+    vertical-align: middle;
+}
+
+.tundra .dijitDisabled.citrixImageItem img {
+    opacity: 0.5;
+}
+
+.tundra .dijitSelected.citrixImageItem img {
+    opacity: 1.0;
+}
+
+.tundra .citrixImage100 img {
+    width: 100px;
+}
+
+.tundra .citrixImage85 img {
+    width: 85px;
+}
+
+.tundra .citrixImage75 img {
+    width: 75px;
+}
+
+.tundra .citrixImage65 img {
+    width: 65px;
+}
+
+.tundra .citrixImage55 img {
+    width: 55px;
+}
+
+.tundra .citrixImage45 img {
+    width: 45px;
+    height: 45px;
+}

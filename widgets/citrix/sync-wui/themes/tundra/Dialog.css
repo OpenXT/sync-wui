@@ -1,0 +1,125 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .dijitDialogUnderlay{
+	opacity:0.7;
+	background:#000;	
+}
+
+.tundra .citrixDialog {
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	background: #ffffff; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #ffffff 60%, #daedf2 95%, #c1eaf6 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(60%,#ffffff), color-stop(95%,#daedf2), color-stop(100%,#c1eaf6)); 
+	/* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 60%,#daedf2 95%,#c1eaf6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #ffffff 60%,#daedf2 95%,#c1eaf6 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #ffffff 60%,#daedf2 95%,#c1eaf6 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #ffffff 60%,#daedf2 95%,#c1eaf6 100%); /* W3C */
+    /* Because IE only does horizontal radius, dialogs look better with just a plain white background */
+	padding:30px;
+	color:#999;
+}
+
+.tundra .citrixGridDialog {
+    height: 600px;
+    width: 900px;
+}
+
+.tundra .citrixGridDialog .citrixDialogPaneContent {
+    height: 520px;
+}
+
+.tundra .citrixGridDialog .citrixDialogFooterContent {
+    float: right;
+}
+
+.tundra .citrixDialogError {
+    /*background-color: transparent; - zcc commented out because in IE8 the dialog forms inline a filter attribute with an opacity one which ignores the css above so we need there to be a background colour*/
+}
+
+.tundra .citrixDialog .center {
+    text-align: center;
+}
+
+.tundra .citrixDialogTitleBar {
+	background:none;
+	color:#474747;
+	padding-bottom:20px;
+}
+
+.tundra .citrixDialogTitleIcon {
+    max-height: 30px;
+    float: left;
+    padding-top: 5px;
+}
+
+.tundra .citrixDialogTitle {
+	font-size: 14px;
+	font-weight:bold;
+    line-height: 38px;
+    padding: 0 10px;
+}
+
+
+.tundra .citrixDialogCloseIcon {
+    cursor: pointer;
+	background: url("/images/icons/close_dialog.png") no-repeat center center;
+	height: 11px;
+	width: 11px;
+	display:block;
+	float:right;
+}
+.tundra .citrixDialogCloseIconHover {
+}
+
+
+.tundra .citrixDialogPaneContent {
+	padding: 0px;
+	background:none;
+}
+
+.tundra .vmDetailActions{
+	padding:0;
+	margin:0;
+	height:auto;
+	width:auto;	
+}
+
+.tundra .citrixDialogPaneContent h2{
+	margin:0 0 15px 0;
+	padding:0 0 10px 0;
+	border-bottom:1px solid #eee;	
+	color:#474747;
+
+}
+
+.tundra .citrixDialogFooterContent {
+	background:none;
+	padding-top:10px;
+}
+
+.tundra .citrixDialogFooter {
+}
+
+.tundra .citrixDialogFooterItem {
+}
+
+.tundra .dijitselect, .tundra .dijittextbox{
+	height:26px;
+	line-height:26px;
+	border-radius:0;
+	border:1px solid #999;
+	background:fff;
+}
+
+.tundra .citrixTabPaneField{
+	margin-bottom:10px;	
+}
+
+.tundra .citrixTabPaneField label{
+	padding-top:15px;
+}

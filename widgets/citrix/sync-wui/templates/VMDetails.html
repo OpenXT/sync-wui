@@ -1,0 +1,406 @@
+<div class="citrixDialog vmDetails clearfix" dojoAttachPoint="containerNode" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title">
+    <div class="citrixDialogTitleBar  clearfix">
+        <img dojoType="citrix.common.BoundWidget" dojoAttachPoint="imageNode" class="citrixDialogTitleIcon" />
+        <span dojoAttachPoint="titleNode" class="citrixDialogTitle" id="${id}_title"></span>
+        <span dojoAttachPoint="closeButtonNode" class="citrixDialogCloseIcon" dojoAttachEvent="onclick: onCancel">
+            <span dojoAttachPoint="closeText"></span>
+        </span>
+    </div>
+    <div class="citrixDialogPaneContent  clearfix">
+        <div class="detailsTabContainer" dojoAttachPoint="tabContainer" dojoType="citrix.common.TabContainer">
+            <div dojoType="citrix.common.ContentPane" title="${GENERAL}" selected="true">
+                <h2>${GENERAL}</h2>
+                <fieldset class="citrixTabPaneColumn">
+                    <div class="citrixTabPaneField">
+                        <label for="vm_uuid">${UUID_LABEL}</label>
+                        <span class="value" data-dojo-type="citrix.common.BoundWidget" name="model.vm_uuid" id="vm_uuid" map="{'${NONE_SET}': ''}"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="vm_name">${NAME_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="model.vm_name" id="vm_name" editorParams="{ maxLength: 60, regExp: '[^\\s<>&][^<>&]*', required: true, invalidMessage: '${NAME_VALERROR}' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="type">${TYPE_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.type" id="type" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="vm_name">${TEMPLATE_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vmparam.template" id="vmparam" value="new-vm" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="slot">${SWITCHER_KEY_LABEL}</label>
+                        <span class="value" dojoAttachPoint="slotSelect" dojoType="citrix.common.EditableWidget" editor="citrix.common.Select" mask="${SWITCHER_KEY_MASK}" map="{ '${NOT_INCLUDED_VALUE}': '' }" name="config.vm.slot" id="slot"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label dojoType="citrix.common.Label" dojoAttachPoint="startOnBootLabel" for="start-on-boot" title="${AUTOBOOT_TOOLTIP}">${AUTOBOOT_LABEL}</label>
+                        <span class="value" dojoAttachPoint="startOnBoot" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.start-on-boot" id="start-on-boot" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label dojoType="citrix.common.Label" dojoAttachPoint="platformPowerLabel" for="control-platform-power-state" title="${POWER_BEHAVIOUR_TOOLTIP}">${POWER_BEHAVIOUR_LABEL}</label>
+                        <span class="value" dojoAttachPoint="platformPower" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.control-platform-power-state" id="control-platform-power-state" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="hidden-in-ui">${HIDDEN_UI_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.hidden-in-ui" id="hidden-in-ui" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="hidden-in-switcher">${HIDDEN_SWITCHER_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.hidden-in-switcher" id="hidden-in-switcher" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label dojoType="citrix.common.Label" for="seamless-traffic" title="${COMMUNICATION_TOOLTIP}">${COMMUNICATION_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.seamless-traffic" id="seamless-traffic" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="description">${DESCRIPTION_LABEL}</label>
+                        <span class="value textArea" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextarea" name="config.vm.description" id="description" map="{ '${NOT_INCLUDED_VALUE}': '' }" editorParams="{ maxLength: 200, regExp: '([^\\s<>&][^<>&]*)?', invalidMessage: '${DESCRIPTION_VALERROR}' }"></span>
+                    </div>
+                </fieldset>
+            </div>
+            <div dojoType="citrix.common.ContentPane" title="${HARDWARE}">
+                <h2>${HARDWARE}</h2>
+                <fieldset class="citrixTabPaneColumn">
+                    <div class="citrixTabPaneField">
+                        <label for="memory">${MEMORY_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.memory" id="memory" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="cores-per-socket">${CORES_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.cores-per-socket" id="cores-per-socket" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="vcpus">${VCPUS_LABEL}</label>
+                        <span class="value" dojoAttachPoint="vcpuNode" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.vcpus" id="vcpus" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label dojoAttachPoint="threedLabel" for="gpu">${THREED_GFX_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.gpu" id="gpu" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="cd">${VIRTUAL_CD_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.cd" id="cd" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="usb-grab-devices">${USB_GRAB_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.usb-grab-devices" id="usb-grab-devices" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="seamless-mouse-left">${MOUSE_LEFT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.seamless-mouse-left" id="seamless-mouse-left" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="seamless-mouse-right">${MOUSE_RIGHT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.seamless-mouse-right" id="seamless-mouse-right" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="start-on-boot-priority">${BOOT_PRIORITY_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.start-on-boot-priority" id="start-on-boot-priority" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="shutdown-priority">${SHUTDOWN_PRIORITY_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.NumberTextBox" name="config.vm.shutdown-priority" id="shutdown-priority" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField userVmOnly">
+                        <label for="boot">${BOOT_ORDER_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.asmSelect" name="config.vm.boot" id="boot" map="{ '${NOT_INCLUDED_VALUE}': '', '${CD_DRIVE}': 'd', '${HARD_DRIVE}': 'c', '${NETWORK}': 'n' }" editorParams="{label: '${BOOT_TITLE}'}"></span>
+                    </div>
+                </fieldset>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${NETWORKS}">
+                <h2>${NETWORKS}</h2>
+                <fieldset class="networkEntry customAction">
+                    <div class="citrixTabPaneField">
+                        <label for="newNetwork">${NETWORK_DAEMON}</label>
+                        <span class="dijitInline value nic">nic/</span>
+                        <span class="value networkNumber" data-dojo-type="citrix.common.NumberTextBox" id="newNetwork" data-dojo-attach-point="newNetwork" data-dojo-attach-event="onKeyUp: onNetworkKeyUp"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newNetworkProperty">${PROPERTY}</label>
+                        <select class="citrix value" data-dojo-type="citrix.common.Select" id="newNetworkProperty" data-dojo-attach-point="newNetworkProperty" data-dojo-attach-event="onChange: onNewNetworkPropertyChange">
+                            <option selected="selected" value="">${NOT_INCLUDED_VALUE}</option>
+                            <option value="backend-uuid">backend-uuid</option>
+                            <option value="backend-name">backend-name</option>
+                            <option value="network">network</option>
+                            <option value="wireless-driver">wireless-driver</option>
+                            <option value="mac">mac</option>
+                            <option value="enabled">enabled</option>
+                        </select>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newNetworkValue">${VALUE}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newNetworkValue" data-dojo-attach-point="newNetworkValue" data-dojo-attach-event="onKeyUp: onNetworkKeyUp"></span>
+                        <span class="value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="newBoolNetworkValue" data-dojo-attach-point="newBoolNetworkValue" data-dojo-attach-event="onChange: onNetworkKeyUp" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <button type="button" data-dojo-type="citrix.sync-wui.Button" class="right" data-dojo-attach-point="NetworkAddButton" data-dojo-attach-event="onClick: onAddNetwork">${ADD_ACTION}</button>
+                </fieldset>
+                <div class="customDataTable">
+                    <table class="citrixTable" data-dojo-type="citrix.common.Repeater" name="networkArray" data-dojo-props="dojoEventHandler: this" data-dojo-attach-point="networkRepeater">
+                        <thead>
+                            <tr>
+                                <th>${NETWORK_DAEMON}</th>
+                                <th>${PROPERTY}</th>
+                                <th>${VALUE}</th>
+                                <th class="customAction"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr template daemon="%daemon%" property="%property%" class="%className%">
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="daemon"></span>
+                                </td>
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="property"></span>
+                                </td>
+                                <td class="customValueRow">
+                                    <span templateType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="value"></span>
+                                </td>
+                                <td class="customAction">
+                                    <button type="button" templateType="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onDeleteNetwork">${REMOVE_ACTION}</button>
+                                </td>
+                            </tr>
+                            <tr empty>
+                                <td colspan="4" class="deviceRow">${NO_CUSTOM_FIELDS}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div dojoType="citrix.common.ContentPane" title="${DISKS}">
+                <h2>${DISKS}</h2>
+                <div class="scrollableTab">
+                    <table class="citrixTable vmDisks" dojoType="citrix.common.Repeater" data-dojo-props="dojoEventHandler: this" uniqueId="disk_uuid" name="model.disks" dojoAttachPoint="diskRepeater">
+                        <thead>
+                            <tr>
+                                <th>${DISK_NAME_TH}</th>
+                                <th>${DISK_PATH_TH}</th>
+                                <th>${DISK_TYPE_TH}</th>
+                                <th class="diskAction">${ACTIONS}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr template deviceId="%disk_uuid%">
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="disk_name"></span>
+                                </td>
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="file_path"></span>
+                                </td>
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="disk_type" map="{ 'VHD': 'v', 'ISO': 'i' }"></span>
+                                </td>
+                                <td class="diskAction">
+                                    <button type="button" class="diskButton" templateType="citrix.sync-wui.Button" dojoAttachEvent="onClick: onDiskDelete">${REMOVE_DISK}</button>
+                                </td>
+                            </tr>
+                            <tr empty>
+                                <td colspan="5">${NO_DISKS}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <button type="button" class="diskButton right diskAction" dojoType="citrix.sync-wui.Button" dojoAttachEvent="onClick: onDiskAdd">${ADD_DISK}</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div dojoType="citrix.common.ContentPane" title="${ICON}">
+                <h2>${ICON}</h2>
+                <ul dojoAttachPoint="image_path" dojoType="citrix.sync-wui.ImageSelect" itemClass="citrixImageItem citrixImage75"></ul>
+                <p class="wallpaperOverrideTitle">${ICON_OVERRIDE_HEADER}</p>
+                <div class="citrixTabPaneField wallpaperOverride">
+                    <label for="vmIconText">${ICON_TEXT_LABEL}</label>
+                    <span class="value" data-dojo-type="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.image-path" id="vmIconText" data-dojo-attach-point="vmIconText" data-dojo-attach-event="onChange: _onVmIconTextChange" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                </div>
+            </div>
+            <div dojoType="citrix.common.ContentPane" title="${ADVANCED}">
+                <h2>${ADVANCED}</h2>
+                <fieldset class="citrixTabPaneColumn scrollableTabSpace">
+                    <h1>${POLICY_TITLE}</h1>
+                    <div class="citrixTabPaneField">
+                        <label for="stubdom">${STUB_DOMAIN_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.stubdom" id="stubdom" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-modify-vm-settings">${MODIFY_VM_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-modify-vm-settings" id="policy-modify-vm-settings" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-print-screen">${PRINT_SCREEN_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-print-screen" id="policy-print-screen" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>                    
+                    <div class="citrixTabPaneField">
+                        <label for="policy-wired-networking">${NETWORKING_WIRED_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-wired-networking" id="policy-wired-networking" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-wireless-networking">${NETWORKING_WIRELESS_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-wireless-networking" id="policy-wireless-networking" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-cd-access">${CD_ACCESS_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-cd-access" id="policy-cd-access" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-cd-recording">${CD_RECORDING_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-cd-recording" id="policy-cd-recording" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-audio-access">${AUDIO_ACCESS_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-audio-access" id="policy-audio-access" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="policy-audio-recording">${AUDIO_RECORDING_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.policy-audio-recording" id="policy-audio-recording" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="usb-enabled">${USB_ENABLED_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.usb-enabled" id="usb-enabled" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="usb-control">${USB_CONTROL_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.usb-control" id="usb-control" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <h1>${HARDWARE_TITLE}</h1>
+                    <div class="citrixTabPaneField">
+                        <label dojoType="citrix.common.Label" for="acpi-pt" title="${ACPI_PT_TOOLTIP}">${ACPI_PT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.acpi-pt" id="acpi-pt" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label dojoType="citrix.common.Label" for="smbios-pt" title="${SMBIOS_PT_TOOLTIP}">${SMBIOS_PT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.smbios-pt" id="smbios-pt" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label dojoType="citrix.common.Label" for="oem-acpi-features" title="${OEM_ACPI_PT_TOOLTIP}">${OEM_ACPI_PT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.oem-acpi-features" id="oem-acpi-features" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label dojoType="citrix.common.Label" for="amt-pt" title="${AMT_PT_TOOLTIP}">${AMT_PT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.amt-pt" id="amt-pt" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="apic">${APIC_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.apic" id="apic" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>                    
+                    <h1>${VIRTUAL_TITLE}</h1>
+                    <div class="citrixTabPaneField">
+                        <label for="viridian">${VIRIDIAN_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.viridian" id="viridian" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="hvm">${HVM_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.hvm" id="hvm" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="extra-hvm">${HVM_EXTRA_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.extra-hvm" id="extra-hvm" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="extra-xenvm">${XENVM_EXTRA_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.extra-xenvm" id="extra-xenvm" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="cmd-line">${COMMAND_LINE_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.cmd-line" id="cmd-line" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="kernel">${KERNEL_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.kernel" id="kernel" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="kernel-extract">${KERNEL_EXTRACT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.kernel-extract" id="kernel-extract" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="initrd">${INIT_RD_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.initrd" id="initrd" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="initrd-extract">${INIT_RD_EXTRACT_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.initrd-extract" id="initrd-extract" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="sound">${SOUND_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.sound" id="sound" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <h1>${OTHER_TITLE}</h1>
+                    <div class="citrixTabPaneField">
+                        <label for="measured">${MEASURED_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.measured" id="measured" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="track-dependencies">${TRACK_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.track-dependencies" id="track-dependencies" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="auto-s3-wake">${S3_WAKE_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.sync-wui.BooleanSelect" name="config.vm.auto-s3-wake" id="auto-s3-wake" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="s3-mode">${S3_MODE_LABEL}</label>
+                        <span class="value" dojoType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="config.vm.s3-mode" id="s3-mode" map="{ '${NOT_INCLUDED_VALUE}': '' }"></span>
+                    </div>                    
+                </fieldset>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${CUSTOM}" data-dojo-attach-point="customTab">
+                <h2>${CUSTOM}</h2>
+                <fieldset class="customDataEntry customAction">
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigDaemon">${DAEMON}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigDaemon" data-dojo-attach-point="newConfigDaemon" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigProperty">${PROPERTY}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigProperty" data-dojo-attach-point="newConfigProperty" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigValue">${VALUE}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigValue" data-dojo-attach-point="newConfigValue" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <button type="button" data-dojo-type="citrix.sync-wui.Button" class="right" data-dojo-attach-point="ConfigAddButton" data-dojo-attach-event="onClick: onAddConfig">${ADD_ACTION}</button>
+                </fieldset>
+                <div class="customDataTable">
+                    <table class="citrixTable" data-dojo-type="citrix.common.Repeater" name="config._customs" data-dojo-props="dojoEventHandler: this" data-dojo-attach-point="customRepeater">
+                        <thead>
+                            <tr>
+                                <th>${DAEMON}</th>
+                                <th>${PROPERTY}</th>
+                                <th>${VALUE}</th>
+                                <th class="customAction"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr template daemon="%daemon%" property="%property%" class="%className%">
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="daemon"></span>
+                                </td>
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="property"></span>
+                                </td>
+                                <td class="customValueRow">
+                                    <span templateType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="value"></span>
+                                </td>
+                                <td class="customAction">
+                                    <button type="button" templateType="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onDeleteConfig">${REMOVE_ACTION}</button>
+                                </td>
+                            </tr>
+                            <tr empty>
+                                <td colspan="4" class="deviceRow">${NO_CUSTOM_FIELDS}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div dojoAttachPoint="footerNode" class="citrixDialogFooterContent clearfix">
+        <span class="citrixDialogFooter">
+        </span>
+        <span class="citrixDialogFooter right">
+            <button type="button" data-dojo-attach-point="saveButton" data-dojo-type="citrix.sync-wui.Button" class="citrixDialogItemRight editNode" data-dojo-attach-event="onClick: onSave">${SAVE}</button>
+            <button type="button" dojoAttachPoint="closeButton" dojoType="citrix.sync-wui.Button" class="citrixDialogItemRight symphony-button" dojoAttachEvent="onClick: onCancel">${CLOSE}</button>
+        </span>
+    </div>
+</div>

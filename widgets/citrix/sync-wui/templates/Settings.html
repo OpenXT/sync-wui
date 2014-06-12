@@ -1,0 +1,183 @@
+<div class="citrixDialog" data-dojo-attach-point="containerNode" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title">
+	<div class="citrixDialogTitleBar">
+	    <span data-dojo-attach-point="titleNode" class="citrixDialogTitle" id="${id}_title">${SYS_INFO_HEADER}</span>
+        <span data-dojo-attach-point="closeButtonNode" class="citrixDialogCloseIcon" data-dojo-attach-event="onclick: onCancel">
+            <span data-dojo-attach-point="closeText"></span>
+        </span>
+	</div>
+    <div class="citrixDialogPaneContent">
+        <div class="settingsTabContainer" data-dojo-type="citrix.common.TabContainer" data-dojo-attach-point="tabContainer">
+            <div data-dojo-type="citrix.common.ContentPane" title="${DETAILS}" selected="true" data-dojo-attach-point="detailsTab">
+                <h2>${DETAILS}</h2>
+                <div class="citrixTabPaneField">
+                    <label for="device_uuid">${UUID_LABEL}</label>
+                    <span data-dojo-attach-point="device_uuidNode" class="value" data-dojo-type="citrix.common.BoundWidget" name="model.device_uuid" id="device_uuid" map="{'${NONE_SET}': ''}"></span>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="name">${NAME_LABEL}</label>
+                    <span class="value" data-dojo-type="citrix.common.EditableWidget" name="model.device_name" editor="citrix.common.ValidationTextBox" id="name" data-dojo-attach-point="nameNode" editorParams="{ required: true, invalidMessage: '${NAME_VALERROR}' }"></span>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="repo">${REPO_LABEL}</label>
+                    <select class="citrix value" dojoType="citrix.common.Select" name="model.repo_uuid" id="repo" data-dojo-attach-point="repoNode"></select>
+                </div>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${SYS_INFO_WALLPAPER_TITLE}">
+                <h2>${SYS_INFO_WALLPAPER_TITLE}</h2>
+                <p>${WALLPAPER_HEADER}</p>
+                
+                <ul data-dojo-attach-point="wallpaperSelect" data-dojo-type="citrix.sync-wui.ImageSelect" editing="true" itemClass="citrixImageItem citrixImage100"></ul>
+                <p class="wallpaperOverrideTitle">${WALLPAPER_OVERRIDE_HEADER}</p>
+                <div class="citrixTabPaneField wallpaperOverride">
+                    <label for="wallpaperText">${WALLPAPER_TEXT_LABEL}</label>
+                    <span class="value" data-dojo-type="citrix.common.ValidationTextBox" name="config.ui.wallpaper" id="wallpaperText" data-dojo-attach-point="wallpaperText" data-dojo-attach-event="onChange: _onWallpaperTextChange"></span>
+                </div>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${CONFIGURATION}" data-dojo-attach-point="configTab">
+                <h2>${CONFIGURATION}</h2>
+                <div class="citrixTabPaneField">
+                    <label for="autostart">${AUTOSTART_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="autostart" name="config.xenmgr.autostart"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="vmCreation">${VM_CREATION_ALLOWED_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="vmCreation" name="config.xenmgr.vm-creation-allowed"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="vmDeletion">${VM_DELETION_ALLOWED_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="vmDeletion" name="config.xenmgr.vm-deletion-allowed"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="otaUpgrades">${OTA_UPGRADES_ALLOWED_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="otaUpgrades" name="config.xenmgr.ota-upgrades-allowed"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="connectRemote">${CONNECT_REMOTE_DESKTOP_ALLOWED_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="connectRemote" name="config.xenmgr.connect-remote-desktop-allowed"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="measureFailAction">${MEASURE_FAIL_ACTION_LABEL}</label>
+                    <select class="citrix value" dojoType="citrix.common.Select" name="config.xenmgr.measure-fail-action" id="measureFailAction">
+                        <option value="nothing">${NOTHING_ACTION}</option>
+                        <option value="sleep">${SLEEP_ACTION}</option>
+                        <option value="hibernate">${HIBERNATE_ACTION}</option>
+                        <option value="reboot">${REBOOT_ACTION}</option>
+                        <option value="shutdown">${SHUTDOWN_ACTION}</option>
+                        <option value="forced-shutdown">${FORCE_SHUTDOWN_ACTION}</option>
+                        <option value="">${NOT_SET}</option>
+                    </select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="v4vFirewall">${V4V_FIREWALL_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="v4vFirewall" name="config.xenmgr.v4v-firewall"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="enableSSH">${ENABLE_SSH_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="enableSSH" name="config.xenmgr.enable-ssh"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="enableV4VSSH">${ENABLE_V4V_SSH_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="enableV4VSSH" name="config.xenmgr.enable-v4v-ssh"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="enableDom0Networking">${ENABLE_DOM0_NETWORKING_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="enableDom0Networking" name="config.xenmgr.enable-dom0-networking"></select>
+                </div>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${UI_CONFIG}" data-dojo-attach-point="uiTab">
+                <h2>${UI_CONFIG}</h2>
+                <div class="citrixTabPaneField">
+                    <label for="language">${LANGUAGE_LABEL}</label>
+                    <span class="value" data-dojo-type="citrix.common.ValidationTextBox" name="config.ui.language" id="language"></span>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="vmStartMessage">${SHOW_MSG_ON_VM_START_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="vmStartMessage" name="config.ui.show-msg-on-vm-start"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="vmStartToolsMessage">${SHOW_MSG_ON_VM_START_TOOLS_WARNING_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="vmStartToolsMessage" name="config.ui.show-msg-on-vm-start-tools-warning"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="noDiskMsg">${SHOW_MSG_ON_NO_DISK_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="noDiskMsg" name="config.ui.show-msg-on-no-disk"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="mbootWarning">${SHOW_MBOOT_WARNING_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="mbootWarning" name="config.ui.show-mboot-warning"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="toolsWarning">${SHOW_TOOLS_WARNING_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="toolsWarning" name="config.ui.show-tools-warning"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="modifySettings">${MODIFY_SETTINGS_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="modifySettings" name="config.ui.modify-settings"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="modifyServices">${MODIFY_SERVICES_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="modifyServices" name="config.ui.modify-services"></select>
+                </div>
+                <div class="citrixTabPaneField">
+                    <label for="modifyVMSettings">${MODIFY_ADVANCED_VM_SETTINGS_LABEL}</label>
+                    <select class="citrix value" data-dojo-type="citrix.sync-wui.BooleanSelect" id="modifyVMSettings" name="config.ui.modify-advanced-vm-settings"></select>
+                </div>
+            </div>
+            <div data-dojo-type="citrix.common.ContentPane" title="${CUSTOM}" data-dojo-attach-point="customTab">
+                <h2>${CUSTOM}</h2>
+                <fieldset class="customDataEntry">
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigDaemon">${DAEMON}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigDaemon" data-dojo-attach-point="newConfigDaemon" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigProperty">${PROPERTY}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigProperty" data-dojo-attach-point="newConfigProperty" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <div class="citrixTabPaneField">
+                        <label for="newConfigValue">${VALUE}</label>
+                        <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="newConfigValue" data-dojo-attach-point="newConfigValue" data-dojo-attach-event="onKeyUp: onCustomConfigKeyUp"></span>
+                    </div>
+                    <button type="button" data-dojo-type="citrix.sync-wui.Button" class="right" data-dojo-attach-point="ConfigAddButton" data-dojo-attach-event="onClick: onAddConfig">${ADD_ACTION}</button>
+                </fieldset>
+                <div class="customDataTable">
+                    <table class="citrixTable" data-dojo-type="citrix.common.Repeater" name="config._customs" data-dojo-props="dojoEventHandler: this, editing: true" data-dojo-attach-point="customRepeater">
+                        <thead>
+                            <tr>
+                                <th>${DAEMON}</th>
+                                <th>${PROPERTY}</th>
+                                <th>${VALUE}</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr template daemon="%daemon%" property="%property%" class="%className%">
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="daemon"></span>
+                                </td>
+                                <td>
+                                    <span templateType="citrix.common.BoundWidget" name="property"></span>
+                                </td>
+                                <td class="customValueRow">
+                                    <span templateType="citrix.common.EditableWidget" editor="citrix.common.ValidationTextBox" name="value"></span>
+                                </td>
+                                <td>
+                                    <button type="button" templateType="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onDeleteConfig">${REMOVE_ACTION}</button>
+                                </td>
+                            </tr>
+                            <tr empty>
+                                <td colspan="4" class="deviceRow">${NO_CUSTOM_FIELDS}</td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-dojo-attach-point="footerNode" class="citrixDialogFooterContent">
+        <span class="citrixDialogFooter right">
+            <button type="button" data-dojo-attach-point="saveButton" data-dojo-type="citrix.sync-wui.Button" class="citrixDialogItemRight editNode" data-dojo-attach-event="onClick: onSave">${SAVE_ACTION}</button>
+            <button type="button" data-dojo-attach-point="closeButton" data-dojo-type="citrix.sync-wui.Button" class="citrixDialogItemRight" data-dojo-attach-event="onClick: onCancel">${CLOSE_ACTION}</button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="gridContainer deviceWidgetContainer">
+    <div class="gridHeader gridButtons">
+        <button type="button" class="addDeviceButton" data-dojo-type="citrix.sync-wui.Button" data-dojo-attach-event="onClick: _onAddDevice">${ADD_DEVICE}</button>
+        <button data-dojo-type="citrix/sync-wui/ComboButton" data-dojo-attach-event="onClick: _onRemove" disabled="disabled" data-dojo-attach-point="actionButton">
+            <span>${REMOVE_ACTION}</span>
+            <div data-dojo-type="dijit/Menu">
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onAssignRepo">${ASSIGN_REPO}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onAssignVMs">${ASSIGN_USERVMS}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onAssignServices">${ASSIGN_SERVICEVMS}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onEditDevices">${EDIT_CONFIGURATION_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onEditDevicesFromTemplate">${EDIT_CONFIGURATION_FROM_EXISTING_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onLockAllInstances">${LOCK_ALL_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onLockSelectedInstances">${LOCK_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onUnlockAllInstances">${UNLOCK_ALL_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onunlockSelectedInstances">${UNLOCK_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onRemoveAllInstances">${REMOVE_ALL_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onRemoveSelectedInstances">${REMOVE_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onRemoveAllServiceInstances">${REMOVE_ALL_SERVICE_INSTANCES_ACTION}</div>
+                <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onRemoveSelectedServiceInstances">${REMOVE_SERVICE_INSTANCES_ACTION}</div>
+            </div>
+        </button>
+        <div class="filterBox">
+            <span data-dojo-type="citrix.common.ValidationTextBox" data-dojo-attach-point="filterNode"></span>
+            <button data-dojo-type="citrix/sync-wui/ComboButton" data-dojo-attach-event="onClick: _onSearch">
+                <span>${SEARCH_BUTTON}</span>
+                <div data-dojo-type="dijit/Menu">
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onClear">${CLEAR_FILTER_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onShowSelected">${SHOW_SELECTED_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onSelectAll">${SELECT_ALL_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onSelectNone">${SELECT_NONE_BUTTON}</div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="gridBody" data-dojo-attach-point="containerNode"></div>
+</div>

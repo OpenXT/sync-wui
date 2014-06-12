@@ -1,0 +1,46 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .dgrid .field-icon {
+    width: 50px;
+}
+
+.tundra .dgrid .field-num_vm_instances {
+    width: 200px;
+}
+
+.tundra .vmWidgetContainer .dgrid .field-actions {
+    width: 330px;
+}
+
+.tundra .dgrid-content .field-icon {
+    padding: 2px 10px;
+}
+
+.tundra .dgrid-content .field-num_vm_instances,
+.tundra .dgrid-content .field-actions {
+    text-align: center;
+}
+
+.tundra .dgrid-content .field-actions {
+    padding: 2px 10px;
+}
+
+.tundra .dgrid-content .symphony-button > span {
+    padding: 5px 20px;
+}
+
+.tundra .dgrid-content .vmGridImage {
+    height: 30px;
+}
+
+/*
+.tundra .gridBody .imagebutton {
+    height: 10px;
+    margin-top: -14;
+    min-width: 0;
+}
+*/

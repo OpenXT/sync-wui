@@ -1,0 +1,46 @@
+<div class="citrixDialog" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title">
+    <div class="citrixDialogTitleBar">
+        <span dojoAttachPoint="titleNode" class="citrixDialogTitle" id="${id}_title"></span>
+        <span dojoAttachPoint="closeButtonNode" class="citrixDialogCloseIcon" dojoAttachEvent="onclick: onCancel">
+            <span dojoAttachPoint="closeText"></span>
+        </span>
+    </div>
+    <div dojoAttachPoint="containerNode" class="citrixDialogPaneContent">
+        <div class="citrixTabPaneField">
+            <label for="name">${NAME_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.ValidationTextBox" name="name" id="name" data-dojo-attach-point="nameNode" required="true" invalidMessage="${NAME_VALERROR}"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="path">${PATH_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="path" data-dojo-attach-point="pathNode" required="true" invalidMessage="${PATH_VALERROR}"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="hash">${HASH_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="hash" data-dojo-attach-point="hashNode" required="true" regExp="[0-9a-f]{64}" invalidMessage="${HASH_VALERROR}"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="size">${SIZE_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.NumberSpinner" smallDelta="128" largeDelta="512" constraints="{min: 128, max: 3012, places: 0}" value="1024" id="size" data-dojo-attach-point="sizeNode"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="type">${TYPE_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.Select" options="[{ label: 'VHD', value: 'v' }, { label: 'ISO', value: 'i' }]" id="type" data-dojo-attach-point="typeNode" data-dojo-attach-event="onChange: onTypeChange"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="key">${KEY_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.ValidationTextBox" id="key" data-dojo-attach-point="keyNode" regExp="[0-9a-f]{64}|[0-9a-f]{128}" invalidMessage="${KEY_VALERROR}"></span>
+        </div>
+        <div class="citrixTabPaneField">
+            <label for="readonly">${READONLY_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.Select" options="[{ label: '${TRUE}', value: false }, { label: '${FALSE}', value: true }]" id="readonly" data-dojo-attach-point="readonlyNode" data-dojo-attach-event="onChange: onROChange"></span>
+        </div> 
+        <div class="citrixTabPaneField">
+            <label for="shared">${SHARED_LABEL}</label>
+            <span class="value" data-dojo-type="citrix.common.Select" options="[{ label: '${TRUE}', value: true}, { label: '${FALSE}', value: false}]" id="shared" data-dojo-attach-point="sharedNode"></span>
+        </div>      
+    </div>
+    <div dojoAttachPoint="footerNode" class="citrixDialogFooterContent">
+        <button type="button" data-dojo-type="citrix.sync-wui.Button" data-dojo-attach-point="saveButton" data-dojo-attach-event="onClick: onSave">${ADD_BUTTON}</button>
+        <button type="button" data-dojo-type="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onCancel">${CANCEL_BUTTON}</button>
+    </div>
+</div>

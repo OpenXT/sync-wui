@@ -1,0 +1,61 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+/************************************************
+GENERAL STYLES 
+************************************************/
+
+body {
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+    margin: 0;
+   }
+
+.hero{
+	width:704px;
+	height:878px;
+	position:absolute;
+	top:49px;
+	left:79px;
+	background: url("/images/symphony/DesktopAppsHeroImage_704x878.png") no-repeat scroll 0px 0px transparent
+}
+
+.title {
+    font-size: 28px;
+    color: #fff;
+    padding: 10px;
+}
+
+.user {
+    font-size: 14px;
+    color: #ddd;
+    padding: 10px;
+}
+
+.brand_footer { 
+	background: url("/images/symphony/BrandCorridorBackground_800x93.png") repeat-x; 
+	height: 93px; 
+	position: fixed; 
+	bottom: 0; 
+	width: 100%; 
+	z-index: 10;
+}
+
+
+/************************************************
+MISC.
+************************************************/
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */

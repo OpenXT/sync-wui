@@ -1,0 +1,21 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .badgeIcon {
+	background: url(/images/sprites/badgeIcons.png) no-repeat 0 0;
+	width: 24px;
+	height: 20px;
+	text-align: center;
+    display: inline-block;
+}
+
+/* Firefox doesn't understand background-position-y */
+.tundra .badgeIconManaged { background-position: 0 0; }
+.tundra .badgeIconThreed { background-position: 0 -20px; }
+.tundra .badgeIconPublish { background-position: 0 -40px; }
+.tundra .badgeIconNative { background-position: 0 -60px; }
+.tundra .badgeIconEncrypted { background-position: 0 -80px; }
+.tundra .badgeIconDiskReset { background-position: 0 -100px; }

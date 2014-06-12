@@ -1,0 +1,144 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .settingsTabContainer {
+    width: 900px;
+    height: 600px;
+}
+
+.tundra .settingsTabContainer .citrix.dijitSelect {
+	width: 200px !important;
+}
+
+.tundra .settingsTabContainer .citrixTabPaneField{
+	margin-bottom:50px;	
+}
+
+.tundra .settingsTabContainer .citrixTabPaneField label {
+    min-width: 150px;
+	line-height:20px;
+}
+
+.tundra .settingsTabContainer .citrixImageSelect{
+	height:auto;
+	margin:20px 0;
+	padding:0;
+    max-height: 420px;
+}
+
+.tundra .settingsTabContainer .citrixImageSelect .citrixImageItem{
+	-webkit-border-image:none;
+	border:5px solid #eee;
+	margin:0 20px 20px 0;
+	-webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tundra .settingsTabContainer .citrixImageSelect .citrixImageItemHover{
+	border:5px solid #ccc;
+	cursor:pointer;
+}
+
+
+.tundra .settingsTabContainer .citrixImageSelect .citrixImageItemSelected{
+	border:5px solid #4A94D0;
+}
+
+.tundra .citrixDialogPaneContent .wallpaperOverrideTitle{
+	margin-bottom:20px;
+}
+
+.tundra .citrixTabPaneField.wallpaperOverride label{
+	padding-left:0;
+}
+
+
+.tundra .customDataEntry{
+	
+	padding-bottom:10px;
+	margin-bottom:20px;
+	border-bottom:1px solid #ddd;	
+}
+
+.tundra .customDataTable{
+	
+	height:340px;
+	width:100%;
+	overflow-y:auto;
+}
+
+.tundra .speedContainer {
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.tundra .speedRadio {
+    display: block;
+}
+
+.tundra .gpuPlacementFooter {
+    font-size: 14px;
+    margin: -15px 15px 0;
+    background: white;
+}
+
+.tundra .actionButton {
+    padding: 10px 0;
+}
+
+.tundra .updateButton {
+    margin: 0;
+}
+
+.tundra .update {
+    height: 33px;
+    overflow: hidden;
+}
+
+.tundra .updateText {
+    float: left;
+    width: 280px;
+}
+
+.tundra .update .dijitTextBox {
+    width: 230px;
+}
+
+.tundra .updateProgressDetails {
+    width: 230px;
+    display: inline-block;
+}
+
+.tundra .nativeItem {
+    padding: 3px 0 0 17px;
+}
+
+.tundra .nativeItem label {
+    margin-left: 2px;
+}
+
+.tundra .customValueRow .dijitTextBox.citrix {
+    width: 180px !important;
+}
+
+.tundra .removedConfig {
+    display: none;
+}
+
+.tundra .selectUserButton.symphony-button.dijitButton {
+    margin: 0px;
+}
+
+.tundra .selectUserButton.symphony-button > span,
+.tundra .removeUserButton.symphony-button > span {
+    padding: 5px 20px;
+}
+
+.tundra .settingsTabContainer .citrixTabPaneField .value {
+    margin-left: -5px;
+}

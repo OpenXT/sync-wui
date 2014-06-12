@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/dojo/resources/dojo.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/dijit/themes/dijit.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/dijit/themes/tundra/tundra.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/dgrid/css/dgrid.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/dgrid/css/skins/tundra.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/citrix/common/themes/tundra/tundra.css{{suffix}}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/widgets/citrix/sync-wui/themes/tundra/tundra.css{{suffix}}" />
+
+	{{{block "style"}}}
+</head>
+
+<body class="tundra">
+<div id="app-screen-wrapper">
+<div id="app-screen">
+	{{^login}}
+	<div id="app-header" class="clearfix">
+		<div class="title">{{title}}</div>
+
+		<div class="header-links">
+		<ul class="clearfix">
+			{{#user}}
+				<li class="display-name">Welcome {{displayName}}</li>
+				<li class="log-off"><a href="/logout"><span>Log off</span></a></li>
+			{{/user}}
+			{{^user}}
+				<li class="log-on"><a href="/login"><span>Log on</span></a></li>
+			{{/user}}
+		</ul>
+		</div>
+
+	</div>
+	{{/login}}
+
+	<div id="app-content">
+		{{{body}}}
+	</div>
+</div>
+</div>
+	<script type="text/javascript" src="/socket.io/socket.io.js{{suffix}}"></script>
+	<script type="text/javascript" src="script/socket_wrapper.js{{suffix}}"></script>
+	<script type="text/javascript" src="script/utilities.js{{suffix}}"></script>
+
+    {{{block "script"}}}
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+# IDE files
+*.csproj.user
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# Dojo source (downloaded at develop or build time)
+/widgets/dijit
+/widgets/dojo
+/widgets/dojox
+/widgets/util
+
+# Built dojo 
+/dist/static/widgets
+
+# User-specific settings
+/dist/user.json
+
+# Binary and log stuffs from /dist/node_modules
+builderror.log
+.bin/
+build/
+
+# Don't ignore our root build directory
+!/build/

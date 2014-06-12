@@ -1,0 +1,29 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+@import url("AlertDialog.css");
+@import url("AlertIcons.css");
+@import url("ArrowIcons.css");
+@import url("BadgeIcons.css");
+@import url("Common.css");
+@import url("DeviceGrid.css");
+@import url("DiskGrid.css");
+@import url("Grid.css");
+@import url("ImageSelect.css");
+@import url("MainTabContainer.css");
+@import url("MediaWizard.css");
+@import url("Settings.css");
+@import url("TooltipIcons.css");
+@import url("VMDetails.css");
+@import url("VMIcons.css");
+@import url("VMGrid.css");
+
+@import url("Logon.css");
+@import url("AppLayout.css");
+@import url("Assets.css");
+@import url("Dialog.css");
+@import url("TabContainer.css");
+@import url("Expando.css");

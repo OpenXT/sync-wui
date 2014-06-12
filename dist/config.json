@@ -1,0 +1,16 @@
+{
+    "port": 80,
+    "address": "",
+    "ldap": {
+        "url": "ldap://<ldap server>:389",
+        "adminDn": "CN=<user>,OU=<ou>,OU=<ou>,DC=<dc>,DC=<dc>",
+        "adminPassword": "<password>",
+        "searchBase": "OU=<ou>,OU=<ou>,DC=<dc>,DC=<dc>",
+        "searchMap": "sAMAccountName"
+    },
+    "sync-ui-helper": {
+        "path": "/usr/bin/sync-ui-helper",
+        "connection": "<user>/<password>@<oracle server>",
+        "package": "sync_admin"
+    }
+}

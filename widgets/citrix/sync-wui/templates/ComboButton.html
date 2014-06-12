@@ -1,0 +1,33 @@
+<span class="dijit dijitReset dijitInline">
+    <span class="dijit dijitReset dijitInline symphony-button" role="presentation"
+    	><span class="dijitReset dijitInline" data-dojo-attach-point="buttonNode"
+    		data-dojo-attach-event="ondijitclick:_onClick,onkeypress:_onButtonKeyPress" role="presentation"
+    		><span class="dijitReset dijitStretch dijitButtonContents"
+    			data-dojo-attach-point="titleNode"
+    			role="button" aria-labelledby="${id}_label"
+    			><span class="dijitReset dijitInline dijitIcon" data-dojo-attach-point="iconNode" role="presentation"></span
+    			><span class="dijitReset dijitInline"
+    				id="${id}_label"
+    				data-dojo-attach-point="containerNode"
+                    role="presentation"
+    			></span
+    		></span
+    	></span
+    ></span>
+    <span class="dijit dijitReset dijitInline symphony-button" role="presentation"
+    	><span class="dijitReset dijitInline dijitArrowButton"
+            data-dojo-attach-point="_popupStateNode,focusNode,_buttonNode"
+    		data-dojo-attach-event="onkeypress:_onArrowKeyPress" role="presentation"
+            title="${optionsTitle}"
+            role="button" aria-haspopup="true"
+    		><span class="dijitReset dijitStretch"
+    			data-dojo-attach-point="_arrowWrapperNode" role="presentation"
+                ><span class="dijitReset dijitInline dijitArrowButtonInner" role="presentation">&nbsp;</span
+                ><span class="dijitReset dijitArrowButtonChar" role="presentation">&#9660;</span
+    		></span
+    	></span
+    ></span>
+    <span style="display:none !important;"
+        ><input ${!nameAttrSetting} type="${type}" value="${value}" data-dojo-attach-point="valueNode" role="presentation"
+    /></span>
+</span>

@@ -1,0 +1,34 @@
+<div id="logon-screen-wrapper">
+<div id="logon-screen">
+<div class="stripe">
+	<div class="logon clearfix">
+		<h1 class="logo left"><span class="logo-xc">{{title}}</span></h1>
+		
+		<form method="post">
+		    <div class="field">
+				<label>User name</label>
+				<span class="value textinput"><input type="text" name="username"/></span>
+			</div>
+	        <div class="field">
+				<label>Password</label>
+				<span class="value textinput"><input type="password" name="password"/></span>
+			</div>
+	        <div class="field">
+				<label></label>
+								
+				{{#message}}
+					<span class="message">{{.}}</span>
+				{{/message}}
+			
+			</div>
+	        <div class="field">
+				<label></label>
+				<span class="value"><button type="submit" class="blue-button">Log on</button></span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="brand_footer"></div>
+<div class="hero"></div>
+</div>
+</div>

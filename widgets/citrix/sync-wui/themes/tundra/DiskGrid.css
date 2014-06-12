@@ -1,0 +1,16 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .dgrid .field-disk_type,
+.tundra .dgrid .field-read_only,
+.tundra .dgrid .field-shared,
+.tundra .dgrid .field-num_vms {
+    width: 110px;
+}
+
+.tundra .dgrid-content .field-num_vms {
+    text-align: center;
+}

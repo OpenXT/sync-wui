@@ -1,0 +1,62 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .expando{
+	padding:10px 20px;
+	background:#F5F5F5;
+	-moz-box-shadow:inset 0 0 10px #999;
+	-webkit-box-shadow:inset 0 0 10px #999;
+	box-shadow:inset 0 0 10px #999;
+	border-bottom:5px solid #4A94D0;
+}
+
+
+
+.tundra .expandoContent>div{
+	padding:10px;	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #dbdbdb;
+	background:#fff;
+	color:#474747;
+	height:auto;
+
+}
+
+.tundra .expandoContent .ExpandoPlatformSettings{
+	text-align:left;
+	margin:10px;	
+}
+
+.tundra .expandoContent .ExpandoPlatformSettings label{
+	color:#666;
+}
+
+.tundra .expandoContent .ExpandoPlatformSettings .settingDetail{
+	margin:5px 0;	
+}
+
+.tundra .expandoContent h2{
+    margin:0 0 15px 0;
+    padding:0;
+    text-align:left;
+}
+
+.tundra .expandoContent .actions{
+	text-align:left;
+	margin: 20px 0 10px 0;
+}
+
+.tundra .imageButton .expandoIcon {
+    background: url(/images/backgrounds/expanded.png) no-repeat 0 0;
+    height: 16px;
+    width: 16px;
+}
+
+.tundra .collapsed .expandoIcon {
+    background: url(/images/backgrounds/collapsed.png) no-repeat 0 0;
+}

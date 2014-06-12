@@ -1,0 +1,13 @@
+<div class="citrixDialog citrixGridDialog" tabindex="-1" waiRole="dialog" waiState="labelledby-${id}_title">
+	<div class="citrixDialogTitleBar">
+        <span dojoAttachPoint="titleNode" class="citrixDialogTitle" id="${id}_title"></span>
+        <span dojoAttachPoint="closeButtonNode" class="citrixDialogCloseIcon" dojoAttachEvent="onclick: onCancel">
+            <span dojoAttachPoint="closeText"></span>
+        </span>
+	</div>
+    <div dojoAttachPoint="containerNode" class="citrixDialogPaneContent"></div>
+    <div dojoAttachPoint="footerNode" class="citrixDialogFooterContent">
+        <button type="button" data-dojo-type="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onExecute">${ADD_BUTTON}</button>
+        <button type="button" data-dojo-type="citrix.sync-wui.Button" data-dojo-attach-event="onClick: onCancel">${CANCEL_BUTTON}</button>
+    </div>
+</div>

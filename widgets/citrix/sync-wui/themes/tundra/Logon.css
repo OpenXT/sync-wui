@@ -1,0 +1,135 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+
+/************************************************
+LOGON SCREEN STYLES 
+************************************************/
+
+#logon-screen-wrapper{
+		background: url("/images/symphony/DesktopAndAppsGradient_1255x900.jpg") no-repeat scroll center top #004E1C; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpYWxHcmFkaWVudCBpZD0iZyI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjQjNDMDM0Ii8+PHN0b3Agb2Zmc2V0PSIwLjM3IiBzdG9wLWNvbG9yPSIjNjlBMzMwIi8+PHN0b3Agb2Zmc2V0PSIwLjcyIiBzdG9wLWNvbG9yPSIjMjc3ODE4Ii8+PHN0b3Agb2Zmc2V0PSIwLjgyIiBzdG9wLWNvbG9yPSIjMjA2OTE4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDA0RTFDIi8+PC9yYWRpYWxHcmFkaWVudD48cmVjdCB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwMDRFMUMiIC8+PHJlY3QgeD0iMCUiIHk9Ii00MCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjE0MCUiIGZpbGw9InVybCgjZykiIC8+PC9zdmc+);
+	background: -moz-radial-gradient(50% 30%, ellipse farthest-side,  #B3C034 0%, #69A330 37%, #277818 72%, #206918 82%, #004E1C 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, 50% 30%, 0px, 50% 30%, 314, color-stop(0%,#B3C034), color-stop(37%,#69A330), color-stop(72%,#277818), color-stop(82%,#206918), color-stop(100%,#004E1C)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(50% 30%, ellipse farthest-side,  #B3C034 0%,#69A330 37%,#277818 72%,#206918 82%,#004E1C 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(50% 30%, ellipse farthest-side,  #B3C034 0%,#69A330 37%,#277818 72%,#206918 82%,#004E1C 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(50% 30%, ellipse farthest-side,  #B3C034 0%,#69A330 37%,#277818 72%,#206918 82%,#004E1C 100%); /* IE10+ */
+	background: radial-gradient(50% 30%, ellipse at center,  #B3C034 0%,#69A330 37%,#277818 72%,#206918 82%,#004E1C 100%); /* W3C */
+	width: 100%;
+	min-width: 800px;
+	height: 100%;
+	min-height: 800px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+
+}
+
+#logon-screen{
+	width: 100%;
+	height:100%;
+    background: url("/images/symphony/Brand_OverlaySquarePattern_4x4.png") repeat 0 0 transparent;
+
+}
+
+.stripe {
+	position:absolute;
+	top:41%;
+	margin-top: -155px;
+	vertical-align:center;
+	width:100%;
+	padding-bottom:20px;
+	padding-top:30px;
+	display:block;
+	z-index:20;
+	background: rgba(2,27,10,0.8);
+}
+
+
+.logon {
+    margin:60px auto;
+	width:700px;
+	 color: #fff;
+
+}
+
+.logon .logo {
+    width: 343px;
+	margin:-4px 35px 0 0;
+	float:left;
+}
+
+.logon .logo .logo-xc{
+	display:block;
+	width:343px;
+	height:101px;
+	background: url("/images/symphony/wordmark_xc_logo.png") no-repeat top left;
+	overflow:hidden;
+	text-indent:-99999px;
+}
+
+.logon form{
+	 width: 295px;
+	 float:left;
+	 margin-left:25px;
+	 text-align:left;
+}
+
+.logon h1{	
+	margin:0;
+	padding:0;
+}
+	
+.logon .field {
+    padding-bottom: 10px;
+}
+
+.logon label {
+    display: block;
+    font-size: 12px;
+    line-height: 25px;
+	width:200px;
+	padding:0;
+}
+
+
+.logon .value input {
+    border: 1px solid #ccc;
+    width: 200px;
+	font-size:13px;
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	height:27px;
+}
+
+
+.logon .textinput input:focus{
+	border:1px solid #15508c;
+}
+
+
+.logon .value button {
+	margin-left:-1px;
+}
+
+.logon a:link {
+    color:#0467D1;
+}
+
+.logon .message{
+	display:block; 
+	background:  url("/images/icons/logon-error.jpg") no-repeat center left #FCF1E9;
+	color:#E67125;
+	padding-left:40px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:3px;
+	border:1px solid #E67125;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+	
+}

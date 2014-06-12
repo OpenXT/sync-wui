@@ -1,0 +1,195 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+
+/**** BUTTONS   ****************************************************/
+
+.gridButtons{
+	padding:0;
+	text-align:left;
+}
+
+.blue-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #cbdb9e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cbdb9e;
+	box-shadow:inset 0px 1px 0px 0px #cbdb9e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #aab63e), color-stop(1, #346712) );
+	background:-moz-linear-gradient( center top, #aab63e 5%, #346712 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#aab63e', endColorstr='#346712');
+	background-color:#aab63e;
+	-moz-border-radius:1px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+	border:1px solid #000;
+	display:inline-block;
+	color:#ffffff;
+	font-size:13px;
+	font-weight:bold;
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	padding:8px 20px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #484f3c;
+}
+.blue-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #346712), color-stop(1, #aab63e) );
+	background:-moz-linear-gradient( center top, #346712 5%, #aab63e 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#346712', endColorstr='#aab63e');
+	background-color:#346712;
+}
+.blue-button:active {
+	position:relative;
+	top:1px;
+}
+
+.tundra .imageButton {
+    height: auto;
+}
+
+.tundra .imageButton>span {
+    cursor: pointer;
+}
+
+.symphony-button>span,
+.symphony-button.dijitButtonHover>span,
+.dijitComboButtonHover .symphony-button .dijitButtonNodeHover,
+.dijitComboButtonHover .symphony-button .dijitDownArrowButtonHover {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #e5e5e5) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #e5e5e5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5');
+	background-color:#ffffff;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #999999;
+	display:inline-block;
+	color:#333333;
+    font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	padding:8px 20px;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.symphony-button.dijitButtonFocused>span,
+.dijitComboButtonFocused .symphony-button .dijitButtonNodeFocused,
+.dijitComboButtonFocused .symphony-button .dijitDownArrowButtonFocused {
+	-moz-box-shadow: 0px 0px 7px 1px #4197c5;
+	-webkit-box-shadow: 0px 0px 7px 1px #4197c5;
+	box-shadow: 0px 0px 7px 1px #4197c5;
+	border:1px solid #38578f;
+}
+
+.symphony-button.dijitButtonActive>span,
+.dijitComboButtonActive .symphony-button .dijitButtonNodeActive,
+.dijitComboButtonActive .symphony-button .dijitDownArrowButtonActive {
+	-moz-box-shadow:inset 0px 0px 7px 1px #999799;
+	-webkit-box-shadow:inset 0px 0px 7px 1px #999799;
+	box-shadow:inset 0px 0px 7px 1px #999799;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e1e2e3), color-stop(1, #f0f0f0) );
+	background:-moz-linear-gradient( center top, #e1e2e3 5%, #f0f0f0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e1e2e3', endColorstr='#f0f0f0');
+	background-color:#e1e2e3;
+	border:1px solid #5f5f5f;
+}
+
+.symphony-button.dijitButtonDisabled>span,
+.dijitComboButtonDisabled .symphony-button>span {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #efefef) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #efefef 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#efefef');
+	background-color:#ffffff;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #dbdbdb;
+	display:inline-block;
+	color:#adadad;
+   	font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	padding:8px 20px;
+	text-decoration:none;
+}
+
+.dijitComboButton .symphony-button .dijitArrowButton {
+    margin-left: -2px;
+    padding: 8px;
+}
+
+.dijitComboButton .symphony-button .dijitDownArrowButton {
+    padding:1px 0px 0px;
+    display: block;
+}
+
+.dj_chrome .dijitComboButton .symphony-button .dijitDownArrowButton {
+    padding:0px;
+    display: block;
+}
+
+.dijitComboButton .symphony-button .dijitDownArrowButton .dijitArrowButtonInner {
+    margin:2px 0px 3px;
+}
+
+/**** TABLES   ****************************************************/
+
+.tundra .dgrid{
+	height: 100%;
+}
+
+.tundra .dgrid-cell{
+	padding:10px;
+   	font-family: 'Segoe UI',Helvetica Neue,Helvetica, Arial, sans-serif;
+	color:#666;
+	border:none;
+}
+
+.tundra th.dgrid-cell{
+	border-bottom:1px solid #BFBFBF;
+	border-right:1px solid #BFBFBF;
+	font-weight:bold;
+	color:#666;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #e5e5e5) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #e5e5e5 100% );
+    /* No IE filter background because it breaks the lines between cells in the header */
+}
+
+.tundra .dgrid-row:hover{
+	background:#E6F1F7;
+}
+
+.tundra .dgrid-row-even{
+	background:#fff;
+}
+
+.tundra .dgrid-row-odd{
+	background:#F5F5F5;
+}
+
+.tundra .dgrid-row-table {
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.tundra .dgrid-selected .dgrid-row-table{
+	border-top:1px solid #156BB8;
+	border-bottom:1px solid #156BB8;
+	background:#4A94D0;	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4A94D0), color-stop(1, #156BB8) );
+	background:-moz-linear-gradient( center top, #4A94D0 5%, #156BB8 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A94D0', endColorstr='#156BB8');
+	background-color:#4A94D0;
+}
+
+.tundra .dgrid-selected .dgrid-row-table .dgrid-cell{
+	color:#fff;
+	font-weight:bold;
+}
+
+
+

@@ -1,0 +1,49 @@
+/*
+Product: OpenXT
+Project: Synchronizer Administration Web UI
+Copyright© Citrix 2012
+*/
+
+.tundra .gridContainer {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.tundra .gridHeader {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.tundra .gridHeader.gridButtons .dijitSelect {
+    width: 200px;
+    margin-bottom: 19px;
+}
+
+.tundra .gridBody {
+    position: absolute;
+    top: 55px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.tundra .gridBody.fullHeight {
+    top: 0px;
+}
+
+.tundra .gridHeader .symphony-button.dijitButton,
+.tundra .gridHeader .dijitComboButton {
+    margin: 2px 2px 20px;
+}
+
+.tundra .gridHeader .filterBox {
+    float:right;
+}
+
+.tundra .gridHeader .filterBox .dijitTextBox {
+    margin-bottom: 19px;
+}

@@ -1,0 +1,17 @@
+<div class="gridContainer">
+    <div class="gridHeader gridButtons">
+        <div class="filterBox">
+            <span data-dojo-type="citrix.common.ValidationTextBox" data-dojo-attach-point="filterNode"></span>
+            <button data-dojo-type="citrix/sync-wui/ComboButton" data-dojo-attach-event="onClick: _onSearch">
+                <span>${SEARCH_BUTTON}</span>
+                <div data-dojo-type="dijit/Menu">
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onClear">${CLEAR_FILTER_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onShowSelected">${SHOW_SELECTED_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onSelectAll">${SELECT_ALL_BUTTON}</div>
+                    <div data-dojo-type="dijit/MenuItem" data-dojo-attach-event="onClick: _onSelectNone">${SELECT_NONE_BUTTON}</div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="gridBody" data-dojo-attach-point="containerNode"></div>
+</div>
